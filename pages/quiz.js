@@ -6,6 +6,7 @@ import QuizLogo from "../src/components/QuizLogo";
 import QuizBackground from "../src/components/QuizBackground";
 import LoadingWidget from "../src/components/LoadingWidget";
 import QuestionWidget from "../src/components/QuestionWidget";
+import { motion } from "framer-motion";
 import RestultWidget from "../src/components/ResultWidget";
 
 const screenStates = {
@@ -27,7 +28,7 @@ export default function Quiz() {
   }
 
   /* Função que troca o estado do componente Loading que aparece 
-  na tela depois de 1s para as Questões */
+  na tela depois de 3s para as Questões */
   React.useEffect(() => {
     // fetch() ...
     setTimeout(() => {
@@ -51,6 +52,14 @@ export default function Quiz() {
         <QuizLogo />
         {screenState === screenStates.QUIZ && (
           <QuestionWidget
+            as={motion}
+            transition={{ ease: "easeIn", duration: 0.5 }}
+            variants={{
+              show: { opacity: 1, y: 0 },
+              hidden: { opacity: 0, y: 300 },
+            }}
+            initial="hidden"
+            animate="show"
             question={question}
             questionIndex={questionIndex}
             totalQuestions={totalQuestions}

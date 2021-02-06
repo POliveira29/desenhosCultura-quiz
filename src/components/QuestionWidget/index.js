@@ -92,16 +92,7 @@ function QuestionWidget({
   };
   const info = infoAnswer();
   return (
-    <Widget
-      as={motion.div}
-      transition={{ ease: "easeIn", duration: 0.5 }}
-      variants={{
-        show: { opacity: 1, y: 0 },
-        hidden: { opacity: 0, y: 300 },
-      }}
-      initial="hidden"
-      animate="show"
-    >
+    <Widget>
       <Widget.Header>
         <BackLinkArrow href="/" />
         <h3>{`Pergunta ${questionIndex + 1} de ${totalQuestions}`}</h3>

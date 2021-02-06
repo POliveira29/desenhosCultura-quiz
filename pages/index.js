@@ -20,9 +20,13 @@ export default function Home() {
   return (
     <QuizBackground backgroundImage={db.bg}>
       <Head>
-        <title>Initial D - Quiz</title>
+        <title>Desenhos TV Cultura- Quiz</title>
+        <meta
+          name="description"
+          content="Um quiz baseado nos desenhos da TV Cultura dos anos 2000 que maracaram a infância."
+        />
         <meta property="og:image" content={db.bg} />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon.ico" />
+        <link rel="icon" type="image/png" href="/favicon.ico" />
       </Head>
       <QuizContainer>
         <QuizLogo />
