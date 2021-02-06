@@ -47,7 +47,8 @@ function ResultWidget({ results }) {
       resultadoGif =
         "https://thumbs.gfycat.com/BadExhaustedKittiwake-small.gif";
     } else {
-      resultadoGif = "http://www.nextweb.com.br/castelo/pedroanimado.gif";
+      resultadoGif =
+        "https://media.giphy.com/media/B26v0NAfBr9qhjdpAT/giphy.gif";
     }
     return resultadoGif;
   };
