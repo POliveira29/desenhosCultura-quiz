@@ -19,15 +19,6 @@ export default function Home() {
   const [name, setName] = React.useState("");
   return (
     <QuizBackground backgroundImage={db.bg}>
-      <Head>
-        <title>Desenhos TV Cultura- Quiz</title>
-        <meta
-          name="description"
-          content="Um quiz baseado nos desenhos da TV Cultura dos anos 2000 que maracaram a infância."
-        />
-        <meta property="og:image" content={db.bg} />
-        <link rel="icon" type="image/png" href="/favicon.ico" />
-      </Head>
       <QuizContainer>
         <QuizLogo />
         <Widget

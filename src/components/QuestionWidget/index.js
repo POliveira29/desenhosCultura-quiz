@@ -12,7 +12,7 @@ const ToggleBtnConfirm = () => {
   if (document.getElementById("btnConfirm").click) {
     setTimeout(() => {
       document.getElementById("btnConfirm").style.display = "block";
-    }, 15 * 1000);
+    }, 10 * 1000);
     document.getElementById("btnConfirm").style.display = "none";
   }
 };
@@ -110,7 +110,7 @@ function QuestionWidget({
               onSubmit();
               setIsFromSubmited(false);
               setSelectedAlternative(undefined);
-            }, 15 * 1000);
+            }, 10 * 1000);
           }}
         >
           {question.alternatives.map((alternative, alternativeIndex) => {

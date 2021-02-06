@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Widget from "../Widget";
+import { useRouter } from "next/router";
 
 const ListPlayers = styled.div`
   padding: 0.5rem;
@@ -13,7 +14,9 @@ const ListPlayers = styled.div`
     background-color: ${({ theme }) => `${theme.colors.primary}60`};
   }
 `;
-function ResultWidget({ name, results }) {
+function ResultWidget({ results }) {
+  const router = useRouter();
+  const name = router.query.name;
   const resultadoFinal = results.reduce((somatoriaAtual, resultAtual) => {
     const isAcerto = resultAtual === true;
     if (isAcerto) {
@@ -25,12 +28,12 @@ function ResultWidget({ name, results }) {
   const resultMessage = () => {
     let mensagemResultado = "";
     if (resultadoFinal <= 300) {
-      mensagemResultado = "Acho que esta na hora de resgatar essa nostalgia.";
+      mensagemResultado = ", acho que esta na hora de resgatar essa nostalgia.";
     } else if (resultadoFinal >= 400 && resultadoFinal <= 700) {
-      mensagemResultado =
-        "Até que você lembra da sua infância, mas ainda falta algo.";
+      mensagemResultado = ", até que sua memória esta boa.";
     } else {
-      mensagemResultado = "É pelo visto você está bem velho hein... Parabéns";
+      mensagemResultado =
+        ", é pelo visto você está bem velho hein kkk, Parabéns!!!";
     }
     return mensagemResultado;
   };
@@ -38,13 +41,13 @@ function ResultWidget({ name, results }) {
   // Função que retorna um gif dependendo da pontuação que a pessoa fez.
   const resultGif = () => {
     let resultadoGif;
-    if (resultadoFinal <= 200) {
+    if (resultadoFinal <= 400) {
       resultadoGif = "https://media.giphy.com/media/xgeyRJzCYowoM/giphy.gif";
-    } else if (resultadoFinal >= 300 && resultadoFinal <= 400) {
-      resultadoGif = "https://tenor.com/view/initial-d-ae86-gif-19459749.gif";
-    } else {
+    } else if (resultadoFinal >= 500 && resultadoFinal <= 800) {
       resultadoGif =
-        "https://media.tenor.com/images/b2202d792f37bbe9f6397b60e93ca66d/tenor.gif";
+        "https://thumbs.gfycat.com/BadExhaustedKittiwake-small.gif";
+    } else {
+      resultadoGif = "http://www.nextweb.com.br/castelo/pedroanimado.gif";
     }
     return resultadoGif;
   };
@@ -55,8 +58,7 @@ function ResultWidget({ name, results }) {
       <img src={gif} alt="Gif do resultado" />
       <Widget.Content>
         <span>
-          {name}
-          {msg}
+          {name} {msg}
         </span>
         <h3>Você fez {resultadoFinal} pontos, parabéns!</h3>
         <ListPlayers>

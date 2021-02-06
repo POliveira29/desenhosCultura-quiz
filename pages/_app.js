@@ -38,6 +38,11 @@ export default function App({ Component, pageProps }) {
           href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,700&display=swap"
           rel="stylesheet"
         />
+        <title>Desenhos TV Cultura- Quiz</title>
+        <meta name="description" content={db.description} />
+        <meta property="og:image" content={db.bg} />
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+        <link rel="icon" href="/favicon.ico" type="image/x-icon" />
       </Head>
       <ThemeProvider theme={theme}>
         <GlobalStyle />
