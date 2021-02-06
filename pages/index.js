@@ -19,6 +19,19 @@ export default function Home() {
   const [name, setName] = React.useState("");
   return (
     <QuizBackground backgroundImage={db.bg}>
+      <Head>
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,700&display=swap"
+          rel="stylesheet"
+        />
+        <title>Desenhos TV Cultura - Quiz</title>
+        <meta property="og:title" content={db.title} />
+        <meta name="description" content={db.description} />
+        <meta property="og:image" content={db.bg} />
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+        <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+      </Head>
       <QuizContainer>
         <QuizLogo />
         <Widget
@@ -69,7 +82,7 @@ export default function Home() {
           animate="show"
         >
           <Widget.Content>
-            <h1>Quizes da Galera</h1>
+            <h1>Quizes da galera relacionados com o tema</h1>
             <ul>
               {db.external.map((linkExterno) => {
                 const [projectName, githubUser] =

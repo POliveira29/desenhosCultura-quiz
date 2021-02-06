@@ -147,8 +147,10 @@
 
     ],
     "external": [
-      "https://aluraquiz-css.omariosouto.vercel.app",
-      "https://aluraquiz-marvel.omariosouto.vercel.app"
+      "https://quiz90.alinenaoe.vercel.app",
+      "https://ghibliquiz.ygoryamanaca.vercel.app",
+      "https://mastermindquiz.thiagodc1001.vercel.app",
+      "https://quiz-cavaleiro-zodiaco.vercel.app"
     ],
     "theme": {
       "colors": {
